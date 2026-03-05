@@ -1,38 +1,64 @@
+:root {
 
+    --colorprimario: #F8F9FA;
+    --colorsecundario: #1B263B;
+}
 
 .ContenedorPrincipal {
 
-background-color:blue;
-display: grid;
-grid-template-rows: repeat(8,1fr);
-margin:0;
-padding: 0;
+    background-color: var(--colorprimario);
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 1fr 5fr 0.5fr;
+    margin:0; 
+    padding: 0;
     width:100%;
     height:100%;
     position: fixed;
 }
 
-header {
-    text-transform: uppercase;
-    display: flex;
-    justify-content: space-between;
-}
 i {
-    color: black;
-    display: flex;
-    justify-content: space-between;
+    color: var(--colorprimario);
+    font-size: xx-large;
 }
 
 .ContenedorPrincipal .MenuTop {
 
-    background-color: white;
+    background-color: var(--colorsecundario);
     display: flex;
     flex-direction: row;
-    justify-content:start;
-    align-items: start;
-
-    
+    justify-content: space-around;
+    align-items: baseline;
 }
+
+.MenuTop {
+    grid-column: span 4;
+}
+
+.menustart {
+    display: flex;
+    flex-direction: row;
+
+}
+
+
+.MenuTop header {
+     text-transform: uppercase;
+     display: flex;
+     flex-direction: row;
+     gap: 3%;
+     align-items: baseline;
+}
+
+
+h1, h2 {
+    margin: 0;
+    padding: 0;
+    color: var(--colorprimario);
+    white-space: nowrap;
+}
+
+
 body {
     margin: 0;
     padding: 0;
