@@ -22,35 +22,46 @@ i {
     font-size: xx-large;
 }
 
-.ContenedorPrincipal .MenuTop {
+ .MenuTop {
 
     background-color: var(--colorsecundario);
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    align-items: baseline;
+    justify-content:flex-start;
+    align-items: center;
+    gap: 3%;
 }
 
 .MenuTop {
     grid-column: span 4;
 }
 
-.menustart {
+.MenuTop header {
     display: flex;
     flex-direction: row;
-
+    align-items: center;
+    gap: 3%;
+    width: 75%;
 }
 
+.menustart {
 
-.MenuTop header {
-     text-transform: uppercase;
-     display: flex;
-     flex-direction: row;
-     gap: 3%;
-     align-items: baseline;
+    display: flex;
+    align-items: center;
+    gap: 3%;
+    padding: 0 2%;
 }
 
+.menucenter {
 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:left;
+    gap: 3%;
+    padding: 0 4%;
+
+}
 h1, h2 {
     margin: 0;
     padding: 0;
@@ -65,4 +76,5 @@ body {
     font-family: 'Ubuntu', sans-serif;
     font-weight: 700;
     font-style: italic;
+    text-transform: uppercase;
 }
