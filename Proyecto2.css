@@ -126,34 +126,30 @@ body {
     border-radius: 30%;
     border: none;
     cursor: pointer;
-    padding: 2%;
+    padding: 5%;
     margin-top: 3%;
     font-family: 'Ubuntu', sans-serif;
     font-weight: 700;
     font-style: italic;
     text-transform: uppercase;
     font-size: 200%;
-    box-shadow: 2px 2px 2px 1px var(--colorsecundario);
-    transition: 1s ease-in-out;
+    transition: transform 1s ease-in-out; box-shadow: 1s ease;
 }
 
 .hero button:hover {
 
-    color: var(--colorsecundario);
-    background-color: var(--colorterciario);
-    border-radius: 30%;
-    border: none;
-    cursor: pointer;
-    padding: 2%;
-    margin-top: 3%;
-    font-family: 'Ubuntu', sans-serif;
-    font-weight: 700;
-    font-style: italic;
-    text-transform: uppercase;
-    font-size: 250%;
+    transform: scale(1.2) translateY(10px);
     box-shadow: 2px 2px 2px 1px var(--colorsecundario);
     
 
+}
+
+.hero .button-scroll {
+
+    width: 20vw;
+    height: 10vh;
+    margin: 0;
+    padding: 0;
 }
 
 .hero {
@@ -182,16 +178,25 @@ main {
 
 .estadisticas {
 
-    min-height: 100vh;
+    min-height: 80vh;
     min-width: 50vw;
     display: flex;
-    gap: 10%;
+    gap: 4%;
     justify-content: center;
     align-items: center;
   
 }
 
-.estadisticas div {
+.estadisticas-inner {
+
+    display: flex;
+    gap: 4%;
+    justify-content: center;
+    align-items: center;
+  
+}
+
+.estadisticas-inner div {
 
     background-color: var(--colorterciario);
     border-radius: 10%;
@@ -200,11 +205,12 @@ main {
     width: 30vw;
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     transition: transform 0.4s ease-in-out, box-shadow 0.4s ease;
+    cursor: pointer;
 }
 
-.estadisticas div:hover {
+.estadisticas-inner div:hover {
 
-    transform: translateY(-10px) scale(1.1);
+    transform: scale(1.1) translateY(-10px);
     box-shadow: 0 20px 40px rgba(0,0,0,0.6);
 
 }
