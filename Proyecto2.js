@@ -12,3 +12,20 @@ ScrollReveal().reveal('.hero h2', { origin: 'bottom' });
 ScrollReveal().reveal('.hero p', { origin: 'bottom', delay: 200 });
 ScrollReveal().reveal('.hero .button-scroll', { origin: 'top', delay: 800 });
 ScrollReveal().reveal('.estadisticas', { origin: 'bottom', delay: 300});
+
+/*Menu Hamburguesa*/
+
+const H = document.querySelector(".menu-hambur");
+const menu = document.querySelector(".menu-overlay");
+const X = document.querySelector(".menu-overlay .fa-xmark");
+
+H.addEventListener("click", () => {
+    menu.classList.toggle("activo");
+    document.body.classList.toggle("no-scroll");
+});
+
+X.addEventListener("click", () => {
+    menu.classList.remove("activo");
+    document.body.classList.remove("no-scroll");
+});
+
