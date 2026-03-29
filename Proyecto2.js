@@ -29,3 +29,13 @@ X.addEventListener("click", () => {
     document.body.classList.remove("no-scroll");
 });
 
+/*Aparicion del formulario*/
+
+const contacto = document.querySelector(".contacto");
+const reserva = document.querySelector(".hero .button-scroll .boton-reserva");
+
+reserva.addEventListener("click", () => 
+    {contacto.classList.toggle("active");
+        contacto.scrollIntoView({behavior:"smooth"});    
+} );
+
