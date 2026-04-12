@@ -93,31 +93,6 @@ body.no-scroll {
     cursor: pointer;
 }
 
-.estadisticas-inner i {
-
-    font-size: 300%;
-
-}
-
-.estadisticas-inner div {
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10%;
-    text-align: center;
-    padding: 2%;
-}
-
-.estadisticas-inner div i {
-    font-size: 3rem;
-    transition: transform 0.3s ease;
-}
-
-.estadisticas-inner div:hover i {
-    transform: rotate(10deg) scale(1.2);
-}
 
  .MenuTop {
 
@@ -289,64 +264,78 @@ main {
  /*Seccion Estadisticas*/
 
 .estadisticas {
-
-    min-height: 80vh;
-    min-width: 50vw;
+    min-height: 50vh;
+    width: 100%;
+    padding: 3rem 1rem 5rem;
     display: flex;
-    gap: 4%;
     justify-content: center;
     align-items: center;
-  
 }
 
 .estadisticas-inner {
-
+    width: 100%;
+    max-width: 1150px;
     display: flex;
-    gap: 4%;
+    gap: 2rem;
     justify-content: center;
-    align-items: center;
-  
+    align-items: stretch;
 }
 
 .estadisticas-inner div {
-    background-color: var(--colorterciario);
-    border-radius: 10%;
-    border: solid 1px var(--colorsecundario);
-    width: min(30vw, 360px);
-    min-height: 260px;
-    height: auto;
-    padding: 2rem 1.5rem;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease;
+    background: linear-gradient(180deg, rgba(212, 175, 55, 0.96), rgba(212, 175, 55, 0.88));
+    border-radius: 26px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    flex: 1;
+    min-height: 290px;
+    padding: 2.4rem 1.8rem;
+    box-shadow: 0 14px 35px rgba(0,0,0,0.20);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
-    font-weight: 800;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 1rem;
+    align-items: center;
+    gap: 1.2rem;
 }
 
 .estadisticas-inner div:hover {
-
-    transform: scale(1.1) translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-
+    transform: translateY(-8px);
+    box-shadow: 0 18px 38px rgba(0,0,0,0.28);
 }
 
 .estadisticas h3 {
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-family: 'Quicksand', sans-serif;
+    font-size: clamp(2.8rem, 5vw, 4.2rem);
+    font-weight: 700;
+    letter-spacing: -1px;
+    color: var(--colorsecundario);
     margin: 0;
+    line-height: 1;
 }
 
 .estadisticas p {
-    font-size: 1.1rem;
-    color: var(--colorsecundario);
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.05rem;
+    color: rgba(27, 38, 59, 0.95);
     text-align: center;
     font-weight: 600;
     margin: 0;
-    line-height: 1.4;
+    line-height: 1.55;
+    max-width: 20ch;
+    text-transform: none;
 }
 
+.estadisticas-inner div i {
+    font-size: 2.3rem;
+    color: var(--colorsecundario);
+    opacity: 0.85;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.estadisticas-inner div:hover i {
+    transform: scale(1.08) rotate(4deg);
+    opacity: 1;
+}
 /*Seccion Contacto*/
 
 
@@ -453,7 +442,6 @@ input.error {
 }
 
 @media screen and (max-width: 1020px) {
-    
 
     .menucenter {
         display: none;
@@ -462,13 +450,6 @@ input.error {
     .menu-hambur {
         display: block;
         margin-left: auto;
-    }
-
-
-    .estadisticas-inner {
-        flex-direction: column;
-        gap: 1.5rem;
-        width: 100%;
     }
 
     h1 {
@@ -489,5 +470,38 @@ input.error {
         font-size: clamp(1rem, 4vw, 1.5rem);
     }
 
-    
+    .estadisticas {
+        width: 100%;
+        min-height: auto;
+        padding: 2rem 1rem 3rem;
+        box-sizing: border-box;
+    }
+
+    .estadisticas-inner {
+        flex-direction: column;
+        gap: 1.5rem;
+        width: 100%;
+        align-items: center;
+    }
+
+    .estadisticas-inner div {
+        width: 100%;
+        max-width: 340px;
+        min-height: 220px;
+        padding: 1.8rem 1.2rem;
+        box-sizing: border-box;
+    }
+
+    .estadisticas-inner div:hover {
+        transform: translateY(-6px);
+    }
+
+    .estadisticas h3 {
+        font-size: clamp(2.2rem, 8vw, 3rem);
+    }
+
+    .estadisticas p {
+        font-size: 0.95rem;
+        max-width: 24ch;
+    }
 }

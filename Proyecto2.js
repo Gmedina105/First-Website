@@ -1,6 +1,3 @@
-
-
-
 ScrollReveal({
     distance: '70px',
     duration: 1200,
@@ -11,9 +8,9 @@ ScrollReveal({
 ScrollReveal().reveal('.hero h2', { origin: 'bottom' });
 ScrollReveal().reveal('.hero p', { origin: 'bottom', delay: 200 });
 ScrollReveal().reveal('.hero .button-scroll', { origin: 'top', delay: 800 });
-ScrollReveal().reveal('.estadisticas', { origin: 'bottom', delay: 300});
+ScrollReveal().reveal('.estadisticas', { origin: 'bottom', delay: 300 });
 
-/*Menu Hamburguesa*/
+/* Menu hamburguesa */
 
 const H = document.querySelector(".menu-hambur");
 const menu = document.querySelector(".menu-overlay");
@@ -29,36 +26,64 @@ X.addEventListener("click", () => {
     document.body.classList.remove("no-scroll");
 });
 
-/*Aparicion del formulario*/
+/* Aparicion del formulario */
 
 const contacto = document.querySelector(".contacto");
 const reserva = document.querySelector(".hero .button-scroll .boton-reserva");
+const linksContacto = document.querySelectorAll(".link-contacto");
 
-reserva.addEventListener("click", () => 
-    {contacto.classList.toggle("active");
-        contacto.scrollIntoView({behavior:"smooth"});    
-} );
+reserva.addEventListener("click", () => {
+    contacto.classList.add("active");
+    contacto.scrollIntoView({ behavior: "smooth" });
+});
 
-/*Val del formulario*/
+linksContacto.forEach(link => {
+    link.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        contacto.classList.add("active");
+        menu.classList.remove("activo");
+        document.body.classList.remove("no-scroll");
+
+        setTimeout(() => {
+            contacto.scrollIntoView({ behavior: "smooth" });
+        }, 50);
+    });
+});
+
+/* Validacion del formulario */
 
 const form = document.querySelector(".formulario");
 
 form.addEventListener("submit", (e) => {
-    
-    e.preventDefault()
+    e.preventDefault();
 
     const nombre = document.querySelector("#nombre");
     const email = document.querySelector("#email");
     const telefono = document.querySelector("#telefono");
 
-if (nombre.value === "" || email.value === "" || telefono.value === "") {
-
-    alert("Rellenar los campos");
-}
-
-else {
-
-    alert("Formulario completo!")
-};
+    if (nombre.value === "" || email.value === "" || telefono.value === "") {
+        alert("Rellenar los campos");
+    } else {
+        alert("Formulario completo!");
+    }
 });
 
+/*Scroll de seccion estadisticas*/
+
+const linksEstadisticas = document.querySelectorAll(".link-estadisticas");
+const estadisticas = document.querySelector("#estadisticas");
+
+linksEstadisticas.forEach(link => {
+    link.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        menu.classList.remove("activo");
+        document.body.classList.remove("no-scroll");
+
+        estadisticas.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+    });
+});
