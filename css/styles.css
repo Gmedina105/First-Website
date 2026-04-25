@@ -8,6 +8,13 @@
     box-sizing: border-box;
 }
 
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -18,10 +25,20 @@ body {
     font-family: 'Ubuntu', sans-serif;
     background-color: var(--colorprimario);
     color: var(--colorprimario);
+    overflow-x: hidden;
 }
 
 body.no-scroll {
     overflow: hidden;
+}
+
+main,
+section,
+header,
+footer {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 /* Error modal */
@@ -249,12 +266,12 @@ main {
     justify-content: center;
     align-items: center;
     background-image:
-        linear-gradient(rgba(46, 55, 65, 0.8), rgba(46, 55, 65, 0.8)),
-        url(../assets/img/mathematical-physical-formulas-against-background-260nw-2602477871copia.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+        linear-gradient(rgba(46, 55, 65, 0.82), rgba(46, 55, 65, 0.82)),
+        url("../assets/img/mathematical-physical-formulas-against-background-260nw-2602477871copia.jpg");
+    background-size: 900px auto;
+    background-position: center top;
+    background-repeat: repeat;
+    background-attachment: scroll;
 }
 
 /* Hero */
@@ -272,18 +289,24 @@ main {
 
 .hero h2 {
     margin: 0;
+    width: 100%;
+    max-width: 100%;
     color: var(--colorprimario);
     letter-spacing: 3px;
     font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 1.15;
     text-transform: uppercase;
     text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+    overflow-wrap: break-word;
 }
 
 .hero p {
     margin: 0;
+    max-width: 92vw;
     color: var(--colorprimario);
     letter-spacing: 1px;
     font-size: clamp(1rem, 2.5vw, 2rem);
+    line-height: 1.5;
     text-transform: none;
     text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
 }
@@ -783,6 +806,13 @@ main {
 /* Responsive */
 
 @media screen and (max-width: 1020px) {
+    main {
+        background-size: 700px auto;
+        background-position: center top;
+        background-repeat: repeat;
+        background-attachment: scroll;
+    }
+
     .menucenter {
         display: none;
     }
@@ -791,17 +821,47 @@ main {
         display: block;
     }
 
+    .MenuTop {
+        width: 100%;
+        max-width: 100%;
+        padding: 12px 14px;
+        gap: 0.75rem;
+    }
+
+    .MenuTop i {
+        font-size: 1.6rem;
+    }
+
+    .menustart {
+        padding: 0;
+        gap: 0.6rem;
+    }
+
+    .menustart h1 {
+        font-size: clamp(1.1rem, 5vw, 1.45rem);
+    }
+
     .hero {
+        width: 100%;
+        max-width: 100%;
         gap: 2rem;
         padding: 2rem 1rem;
+        overflow-x: hidden;
     }
 
     .hero h2 {
-        font-size: clamp(2rem, 8vw, 4rem);
+        width: 100%;
+        max-width: 94vw;
+        font-size: clamp(2rem, 8vw, 3.4rem);
+        letter-spacing: 1px;
+        line-height: 1.15;
+        text-align: center;
     }
 
     .hero p {
+        max-width: 92vw;
         font-size: clamp(1rem, 4vw, 1.5rem);
+        line-height: 1.5;
     }
 
     .estadisticas {
@@ -814,6 +874,7 @@ main {
         flex-direction: column;
         gap: 1.5rem;
         width: 100%;
+        max-width: 100%;
         align-items: center;
     }
 
@@ -842,12 +903,22 @@ main {
         gap: 2rem;
     }
 
+    .materias-titulo,
+    .opiniones-titulo,
+    .contacto-texto {
+        padding: 0 0.5rem;
+    }
+
     .materias-revista {
+        max-width: 100%;
         gap: 1.5rem;
     }
 
     .materia-feature,
     .materia-feature.reverse {
+        width: 100%;
+        max-width: 340px;
+        margin: 0 auto;
         grid-template-columns: 1fr;
     }
 
@@ -857,15 +928,24 @@ main {
     }
 
     .materia-imagen {
-        height: 240px;
+        height: 190px;
     }
 
     .materia-info {
-        padding: 1.5rem 1.2rem;
+        padding: 1.4rem 1rem;
+    }
+
+    .materia-info h3 {
+        font-size: clamp(1.45rem, 7vw, 2rem);
+        line-height: 1.2;
     }
 
     .materia-bloques {
         grid-template-columns: 1fr;
+    }
+
+    .materia-bloque {
+        padding: 1rem;
     }
 
     .materia-descripcion,
@@ -897,11 +977,51 @@ main {
         font-size: 0.95rem;
     }
 
+    .formulario {
+        max-width: 360px;
+        padding: 2rem 1rem;
+    }
+
     .error-card {
         padding: 1.8rem 1.2rem;
     }
 
     .error-contenido h3 {
         font-size: 1.4rem;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .hero h2 {
+        font-size: clamp(1.8rem, 9vw, 2.4rem);
+        letter-spacing: 0.5px;
+        max-width: 92vw;
+    }
+
+    .hero button,
+    .btn-form {
+        width: 100%;
+        max-width: 300px;
+        padding: 0.9rem 1.4rem;
+    }
+
+    .estadisticas-inner div,
+    .materia-feature,
+    .opiniones-grid,
+    .formulario {
+        max-width: 320px;
+    }
+
+    .materia-imagen {
+        height: 170px;
+    }
+
+    .opinion-card,
+    .materia-info {
+        padding: 1.3rem 1rem;
+    }
+
+    .overlay-content a {
+        min-width: 240px;
     }
 }
